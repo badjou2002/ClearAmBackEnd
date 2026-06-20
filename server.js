@@ -56,7 +56,7 @@ app.get('/api/auth/callback', async (req, res) => {
     // Bech React ya9rahom w y7othom fil sessionStorage!
     const stringifiedTokens = encodeURIComponent(JSON.stringify(tokens));
     
-    return res.redirect(`https://clear-am.vercel.app/dashboard?tokens=${stringifiedTokens}&email=${encodeURIComponent(userEmail)}`);
+    return res.redirect(`https://clearam.vercel.app/dashboard?tokens=${stringifiedTokens}&email=${encodeURIComponent(userEmail)}`);
 
   } catch (error) {
     console.error('❌ Error during OAuth callback:', error);
