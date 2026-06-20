@@ -7,7 +7,7 @@ const { google } = require("googleapis");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors({ origin: process.env.CLIENT_URL || "http://localhost:5173", credentials: true }));
+app.use(cors({ origin: process.env.CLIENT_URL || "https://clearam.vercel.app", credentials: true }));
 app.use(express.json());
 
 mongoose
@@ -56,7 +56,7 @@ app.get('/api/auth/callback', async (req, res) => {
     // Bech React ya9rahom w y7othom fil sessionStorage!
     const stringifiedTokens = encodeURIComponent(JSON.stringify(tokens));
     
-    return res.redirect(`http://localhost:5173/dashboard?tokens=${stringifiedTokens}&email=${encodeURIComponent(userEmail)}`);
+    return res.redirect(`https://clear-am.vercel.app/dashboard?tokens=${stringifiedTokens}&email=${encodeURIComponent(userEmail)}`);
 
   } catch (error) {
     console.error('❌ Error during OAuth callback:', error);
